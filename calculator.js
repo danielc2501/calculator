@@ -22,24 +22,29 @@ beq.addEventListener("click", function(e) {
 	// If currentScreen has a plus, take numbers either side of the plus, add them, and output to screen. Same for if there's a minus.
 	const parts = currentScreen.split(/([\+\-])/g)
 
-	let total=0
+	let operator = "";
 
-	for(let i=0; i<parts.length; i++){
-	
+	let total = Number(parts[0]);
+
+	for(let i=1; i<parts.length; i++){
+
 		if( isNaN(parts[i])){
 
-			
+			operator = parts[i];	
+
 		}else{
+			if(operator=="+"){
+				total = total + Number(parts[i]);	
+			}
+		else{
 
-			total = total + Number(parts[i];	
+			if(operator=="-"){
+				total = total - Number(parts[i]);	
+			}
 
-		}
-
-	}
-	
+	}}}
 	output.innerHTML=total;
 });
-
 
 
 
@@ -90,4 +95,3 @@ b8.addEventListener("click", function(e) {
 b9.addEventListener("click", function(e) {
 	output.innerHTML+="9";	
 });
-
