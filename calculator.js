@@ -10,11 +10,10 @@ const b6 = document.getElementById("button-6");
 const b7 = document.getElementById("button-7");
 const b8 = document.getElementById("button-8");
 const b9 = document.getElementById("button-9");
-
 const bplus = document.getElementById("button-plus");
 const bminus = document.getElementById("button-minus");
-
 const beq = document.getElementById("button-eq");
+const bac = document.getElementById("button-ac");
 
 
 beq.addEventListener("click", function(e) {
@@ -50,6 +49,10 @@ beq.addEventListener("click", function(e) {
 
 bplus.addEventListener("click", function(e) {
 	output.innerHTML+="+";	
+});
+
+bac.addEventListener("click", function(e) {
+	output.innerHTML="";	
 });
 
 bminus.addEventListener("click", function(e) {
