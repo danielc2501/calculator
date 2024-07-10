@@ -1,6 +1,6 @@
 #screen {
 	height: 50px;
-	width: 380px;
+	width: 410px;
 	border: 5px black solid;
 	display: flex;
 	align-content:flex-end;
@@ -23,6 +23,7 @@
 	margin: 4px 2px;
 	transition-duration: 0.4s;
 	cursor: pointer;
+	width: 100px;
 }
 
 .buttons:hover {
