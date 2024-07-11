@@ -12,6 +12,8 @@ const b8 = document.getElementById("button-8");
 const b9 = document.getElementById("button-9");
 const bplus = document.getElementById("button-plus");
 const bminus = document.getElementById("button-minus");
+const bdivide = document.getElementById("button-divide");
+const bmultiply = document.getElementById("button-multiply");
 const beq = document.getElementById("button-eq");
 const bac = document.getElementById("button-ac");
 
@@ -19,7 +21,7 @@ const bac = document.getElementById("button-ac");
 beq.addEventListener("click", function(e) {
 	const currentScreen = output.innerHTML;
 	// If currentScreen has a plus, take numbers either side of the plus, add them, and output to screen. Same for if there's a minus.
-	const parts = currentScreen.split(/([\+\-])/g)
+	const parts = currentScreen.split(/([\+\-\÷\×])/g)
 
 	let operator = "";
 
@@ -33,23 +35,38 @@ beq.addEventListener("click", function(e) {
 
 		}else{
 			if(operator=="+"){
-				total = total + Number(parts[i]);	
+				total = total + Number(parts[i]);
 			}
-		else{
+			else{
+				if(operator=="÷"){
+					total = total / Number(parts[i]);
+				}
+				else{
+					if(operator=="-"){
+						total = total - Number(parts[i]);
+					}
+					else{
+						if(operator=="×"){
+							total = total * Number(parts[i]);
+						}
+	}}}}}
 
-			if(operator=="-"){
-				total = total - Number(parts[i]);	
-			}
-
-	}}}
 	output.innerHTML=total;
 });
-
-
 
 bplus.addEventListener("click", function(e) {
 	output.innerHTML+="+";	
 });
+
+bmultiply.addEventListener("click", function(e) {
+	output.innerHTML+="×";	
+});
+
+
+bdivide.addEventListener("click", function(e) {
+	output.innerHTML+="÷";
+});
+
 
 bac.addEventListener("click", function(e) {
 	output.innerHTML="";	
